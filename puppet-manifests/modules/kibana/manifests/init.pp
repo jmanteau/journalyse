@@ -1,6 +1,6 @@
 class kibana($elasticsearch_server ='localhost:9200') {
 
-	require packages	
+	require kibana::packages	
 
 	$documentroot = $operatingsystem ?{
 		debian  => "/var/www",
