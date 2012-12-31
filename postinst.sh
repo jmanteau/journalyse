@@ -73,7 +73,8 @@ fi
 echo "Starting" > $LOG_FILE
 
 displaytitle "-- Update Aptitude"
-displayandexec "Disable CDROM repo" sed -i 's/^deb cdrom/#deb cdrom/g' /etc/apt/sources.list
+displaymessage "Disable CDROM repo" 
+sed -i 's/^deb cdrom/#deb cdrom/g' /etc/apt/sources.list
 displayandexec "Downloading puppet repo" wget http://apt.puppetlabs.com/puppetlabs-release-wheezy.deb
 displayandexec "Adding Puppet Repo" dpkg -i puppetlabs-release-wheezy.deb
 displayandexec "aptitude update" $APT update
