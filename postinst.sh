@@ -84,6 +84,8 @@ displayandexec "Install Puppet/Unzip" $APT install puppet unzip
 displaytitle "-- Configuration Download"
 displayandexec "Downloading puppet configuration" wget --no-check-certificate https://github.com/jmanteau/journalyse/archive/master.zip
 
+unzip master.zip
+puppet apply --modulepath=journalyse-master/puppet-manifests/modules/ journalyse-master/puppet-manifests/manifests/site.pp
 displaymessage ""
 displaymessage " ### END ###"
 
