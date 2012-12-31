@@ -1,6 +1,7 @@
 class kibana($elasticsearch_server ='localhost:9200') {
 
-	
+	require packages	
+
 	$documentroot = $operatingsystem ?{
 		debian  => "/var/www",
 		ubuntu  => "/var/www",
@@ -14,10 +15,12 @@ class kibana($elasticsearch_server ='localhost:9200') {
 	class { 'apache::mod::passenger': }	
 
 	apache::vhost { 'kibana':
-		vhost_name      => '${hostname}',
+		vhost_name      => $hostname,
 		port            => '80',
 		docroot         => "${kibanadir}/static",
 	}
+
+
 
 	netinstall { kibana :
 		url => "https://github.com/rashidkpc/Kibana/archive/kibana-ruby.zip",
