@@ -11,7 +11,7 @@ class kibana($elasticsearch_server ='localhost:9200') {
 
 	$kibanadir = "${documentroot}/kibana"
 
-	class { 'passenger': }	
+	class { 'apache::mod::passenger': }	
 
 	apache::vhost { 'kibana':
 		vhost_name      => '${hostname}',
