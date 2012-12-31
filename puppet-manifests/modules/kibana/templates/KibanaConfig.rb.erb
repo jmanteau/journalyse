@@ -35,7 +35,7 @@ module KibanaConfig
 
   # Format for timestamps. Defaults to mm/dd HH:MM:ss.
   # For syntax see: http://blog.stevenlevithan.com/archives/date-time-format
-  # Time_format = 'isoDateTime' 
+  # Time_format = 'isoDateTime'
   Time_format = 'mm/dd HH:MM:ss'
 
   # Change which fields are shown by default. Must be set as an array
@@ -78,12 +78,15 @@ module KibanaConfig
   # indexing
   Smart_index = true
   
-  # You can define your custom pattern here for index names if you 
-  # use something other than daily indexing. Pattern needs to have 
-  # date formatting like '%Y.%m.%d'.  Will accept an array of smart 
-  # indexes.  
-  # Smart_index_pattern = ['logstash-web-%Y.%m.%d', 'logstash-mail-%Y.%m.%d'] 
+  # You can define your custom pattern here for index names if you
+  # use something other than daily indexing. Pattern needs to have
+  # date formatting like '%Y.%m.%d'. Will accept an array of smart
+  # indexes.
+  # Smart_index_pattern = ['logstash-web-%Y.%m.%d', 'logstash-mail-%Y.%m.%d']
   Smart_index_pattern = 'logstash-%Y.%m.%d'
+  
+  # Number of seconds between each index. 86400 = 1 day.
+  Smart_index_step = 86400
 
   # ElasticSearch has a default limit on URL size for REST calls,
   # so Kibana will fall back to _all if a search spans too many
@@ -93,7 +96,7 @@ module KibanaConfig
 
   # Elasticsearch has an internal mechanism called "faceting" for performing
   # analysis that we use for the "Stats" and "Terms" modes. However, on large
-  # data sets/queries facetting can cause ES to crash if there isn't enough 
+  # data sets/queries facetting can cause ES to crash if there isn't enough
   # memory available. It is suggested that you limit the number of indices that
   # Kibana will use for the "Stats" and "Terms" to prevent ES crashes. For very
   # large data sets and undersized ES clusers, a limit of 1 is not unreasonable.
