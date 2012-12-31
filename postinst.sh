@@ -82,7 +82,7 @@ displayandexec "Install Puppet/Unzip" $APT install puppet unzip
 
 
 displaytitle "-- Configuration Download"
-displayandexec "Downloading puppet configuration" $WGET https://github.com/jmanteau/journalyse/archive/master.zip
+displayandexec "Downloading puppet configuration" wget --no-check-certificate https://github.com/jmanteau/journalyse/archive/master.zip
 
 displaymessage ""
 displaymessage " ### END ###"
