@@ -1,3 +1,5 @@
+class kibana::packages {
+
 require ruby
 
 package { 'sinatra':
@@ -38,4 +40,5 @@ package { 'rspec':
 package { 'rspec-mocks':
     ensure   => 'installed',
     provider => 'gem',
+}
 }
