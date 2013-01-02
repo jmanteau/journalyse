@@ -27,11 +27,6 @@ package { 'thin':
     provider => 'gem',
 }
 
-package { 'rake':
-    ensure   => 'installed',
-    provider => 'gem',
-}
-
 package { 'rspec':
     ensure   => 'installed',
     provider => 'gem',
