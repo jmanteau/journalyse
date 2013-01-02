@@ -1,6 +1,6 @@
 class kibana::packages {
 
-require ruby
+require ruby::dev
 
 package { 'sinatra':
     ensure   => 'installed',
